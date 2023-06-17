@@ -19,3 +19,11 @@ class vehiculo(models.Model):
     def __str__(self):
         return self.patente
     
+class mantencion(models.Model):
+    id_mant = models.CharField(primary_key=True, max_length=4, verbose_name='mant')
+    desc_mantencion = models.CharField(max_length=50, verbose_name='descuento')
+    fecha_mant = models.DateTimeField()
+    id_patente = models.ForeignKey(vehiculo, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.id_mant
