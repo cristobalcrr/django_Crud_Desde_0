@@ -71,8 +71,8 @@ def form_del_vehiculo(request, id):
 
 
 def form_mantencion(request):
-    datos = {
-        'forn': mantencionForm()
+    dato = {
+        'form': mantencionForm()
     }
 
     if request.method=='POST':
@@ -81,8 +81,7 @@ def form_mantencion(request):
             formulario.save()
             datos['mensaje'] = "Guardado Correctamente"
 
-
-    return render(request, 'core/form_mantencion.html', datos)
+    return render(request, 'core/form_mantencion.html', dato)
 
 def form_mod_mantencion(request, id):
     auto = mantencion.objects.get(patente=id)

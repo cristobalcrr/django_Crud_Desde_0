@@ -15,12 +15,12 @@ class VehiculoForm(ModelForm):
         }
 
 class mantencionForm(ModelForm):
-    class meta:
+    class Meta:
         model = mantencion
         field = ['id_mant', 'desc_mantencion', 'fecha_mant', 'id_patente']
         widget = {
-            'id_mant': forms.TextInput(attrs={'class':'form-control'}),
+            'id_mant': forms.NumberInput(attrs={'class':'form-control'}),
             'desc_mantencion': forms.TextInput(attrs={'class':'form-control'}),
-            'fecha_mant': DateTimeInput(attrs={'class':'form-control'}),
+            'fecha_mant': forms.DateInput(attrs={'class':'form-control'}),
             'id_patente': forms.Select(attrs={'class':'form-control'}),
         }
